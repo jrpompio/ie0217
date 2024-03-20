@@ -7,7 +7,10 @@ using namespace std;
 int main(int argc, char* argv[]){
 
     cout << "Número de argumentos: " << argc <<endl;
-    cout << "Nombre del programa: " << argv[0] <<endl;
     
+    for (int i = 0; i < argc; ++i) {
+        cout << "ARGUMENTO " << i << ": " << argv[i] << endl;
+    }
+
     return 0;
 }
