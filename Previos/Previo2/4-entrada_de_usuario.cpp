@@ -9,6 +9,6 @@ int main(){
     cout << "Ingrese valor numerico: "; 
     cin >> x;
     cout << "Su numero es: " << x <<endl;
+    
     return 0;
-
 }

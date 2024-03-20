@@ -20,5 +20,4 @@ int main(){
     cout << g <<endl;
 
     return 0;
-
 }

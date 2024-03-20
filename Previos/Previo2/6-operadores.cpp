@@ -53,20 +53,22 @@ int main(){
     cout << "mayor que || menor que: " <<   r <<endl;
     r = !(x > y);
     cout << "no mayor que: " <<   r <<endl;
+    
 // OPERADORES BIT A BIT
-cout << "--- bit a bit: " <<endl;
+    cout << "--- bit a bit: " <<endl;
 
-r = x & y;
-cout << "operacion & (and): " <<   r <<endl;
-r = x | y;
-cout << "operacion | (or): " <<   r <<endl;
-r = x ^ y;
-cout << "operacion ^ (xor): " <<   r <<endl;
-r = ~ x;
-cout << "operacion ~ (1complemento): " <<   r <<endl;
-r =  x << 1 ;
-cout << "operacion shift left: " <<   r <<endl;
-r =  x >> 1;
-cout << "operacion shift right: " <<  r <<endl;
+    r = x & y;
+    cout << "operacion & (and): " << r <<endl;
+    r = x | y;
+    cout << "operacion | (or): " << r <<endl;
+    r = x ^ y;
+    cout << "operacion ^ (xor): " << r <<endl;
+    r = ~ x;
+    cout << "operacion ~ (1complemento): " << r <<endl;
+    r =  x << 1 ;
+    cout << "operacion shift left: " <<   r <<endl;
+    r =  x >> 1;
+    cout << "operacion shift right: " <<  r <<endl;
 
+    return 0;
 }
