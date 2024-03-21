@@ -12,7 +12,10 @@ void agregarContacto(
     std::cout << "Ingrese el numero de telefono: ";
     std::cin >> nuevoContacto.telefono;
 
+    // Se agrega nuevoContacto al arreglo en el indice actual
     listaContactos[numContactos++] = nuevoContacto;
+    // Se aumenta numContactos en 1 después de ser agregado
+    
 }
 
 void mostrarContactos(
