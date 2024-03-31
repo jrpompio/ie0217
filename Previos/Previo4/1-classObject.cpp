@@ -33,18 +33,17 @@ int main(){
 // para cada elemento de datos de la clase
 Molde pared(10.0, 20.0, 35.0);
 
-    // cout << pared.largo << endl;    // Mostrando valor pared.largo default 
-    // pared.largo = 20.0;
-    // pared.ancho = 13.2;
-    // pared.alto = 23.4;
-    // cout << pared.largo << endl << endl ;  // Mostrando valor pared.largo introducido
+    cout << pared.largo << endl;     // Mostrando valor pared.largo default 
+    pared.largo = 20.0;
+    pared.ancho = 13.2;
+    pared.alto = 23.4;
+    cout << pared.largo             // Mostrando valor pared.largo introducido  
+    << endl << endl;
 
     // Mostrando valor del area con el metodo calcularArea de la clase Molde
     cout << "El area es: " << pared.calcularArea() << endl;  
     // Mostrando valor del area con el metodo calcularVolumen de la clase Molde
     cout << "El volumen es: " << pared.calcularVolumen() << endl;  
-
-
 
 return 0;    
 }
