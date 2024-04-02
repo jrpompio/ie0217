@@ -9,7 +9,7 @@ class Student {
     }
 };
 
-void calculateAverage(Student s1, Student s2){
+void calculateAverage(Student s1, Student s2){ // Se debe recibir la clase
 
     double average = (
         s1.marks           // Acá la función accede al atributo marks 

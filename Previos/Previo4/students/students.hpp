@@ -3,7 +3,7 @@
 
 class Student {
   public:
-    double marks;
+    double marks;         // Creando atributos y prototipo de metodo
     Student(double m);
 };
   

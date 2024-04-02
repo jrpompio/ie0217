@@ -6,10 +6,10 @@ class Student {
     double marks1, marks2;
 };
 
-Student createStudent(){
-  Student student;
+Student createStudent(){     // Creando función de tipo Student
+  Student student;           // Creando objeto de tipo Student para el return
 
-  student.marks1 = 96.5;
+  student.marks1 = 96.5;   
   student.marks2 = 75.0;
   
   cout << "Marks 1 = " << student.marks1 << endl;
@@ -19,12 +19,13 @@ Student createStudent(){
 }
 
 int main() {
-  Student student1;
+  Student estudianteIE0217;
 
-  student1 = createStudent();
-
-  cout << "Marks 1 = " << student1.marks1 << endl;
-  cout << "Marks 2 = " << student1.marks2 << endl;
+  estudianteIE0217 = createStudent();
+  // Mostrando datos obtenidos de nuevo pero mediante la obtención de sus
+  // atributos 
+  cout << "Marks 1 = " << estudianteIE0217.marks1 << endl;
+  cout << "Marks 2 = " << estudianteIE0217.marks2 << endl;
 
 return 0;
 }
