@@ -1,0 +1,1 @@
+prueba realizada por error de ssh-add al trabajar en tty1 de ubuntu
