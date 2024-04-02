@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Student {
+class Student {                 
   public:
     double marks1, marks2;
 };
