@@ -2,8 +2,7 @@
 ### En los codigos dentro de carpetas se puede copilar
 ### y ejecutar de la siguiente manera
 ### en linux(bash):
- este'''
- g++ -o salida.exe *.cpp && ./salida.exe '''
+### g++ -o salida.exe *.cpp && ./salida.exe 
 ### en windows(powershell):
 ### g++ -o salida.exe *.cpp; .\salida.exe
 ### en windows(cmd):
