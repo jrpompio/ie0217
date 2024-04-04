@@ -11,3 +11,4 @@ que se copila usando dos parametros de archivo
 
 	g++ -o salida.exe main.cpp sum.cpp
 	
+prueba
