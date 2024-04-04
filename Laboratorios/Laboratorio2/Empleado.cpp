@@ -1,7 +1,8 @@
 #include "Empleado.hpp"
 #include <iostream>
 
-Empleado::Empleado(std::string _nombre, int _edad, double _salario):
+Empleado::Empleado(std::string _nombre,
+ int _edad, double _salario):
 nombre(_nombre), edad(_edad), salario(_salario) {}
 
 void Empleado::mostrarDetalles() const {
