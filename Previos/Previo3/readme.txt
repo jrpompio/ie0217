@@ -10,5 +10,5 @@ excepto para el archivo main.cpp
 que se copila usando dos parametros de archivo
 
 	g++ -o salida.exe main.cpp sum.cpp
-	
-prueba
+
+junior
