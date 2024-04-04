@@ -9,7 +9,8 @@ class EmpleadoAsalariado: public Empleado {
     std::string nombre,
     int _edad,
     double _salario);
-    double calcularPago() const override;
+    double calcularPago() const override; // Acá se está sobre escribiendo el
+                                          // metodo virtual puro
 };
 
 #endif

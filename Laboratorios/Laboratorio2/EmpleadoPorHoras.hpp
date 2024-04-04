@@ -10,6 +10,7 @@ class EmpleadoPorHoras : public Empleado {
   public:
     EmpleadoPorHoras(std::string _nombre, int _edad, double _salario, int _horasTrabajadas);
     double calcularPago() const override;
+    // Se sobreescribió el metodo virtual puro
 
 };
 

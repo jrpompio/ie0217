@@ -15,6 +15,5 @@ int main(){
   std::cout << "Pago: $ " << emp2.calcularPago() << std::endl; 
   
 
-
   return 0;    
 }

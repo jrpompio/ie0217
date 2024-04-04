@@ -9,6 +9,7 @@ EmpleadoAsalariado::EmpleadoAsalariado(
     _edad,
     _salario) {}
 
+
 double EmpleadoAsalariado::calcularPago() const {
     return salario;
 };
