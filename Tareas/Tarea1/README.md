@@ -24,13 +24,39 @@
 ###     git push:
   Este comando envia los cambios, los cuales ya tienen un commit, desde el 
   repositorio local hasta el repositorio remoto. 
-      el uso completo es: git push 'enlace' 'rama local':'rama remota'
+           el uso completo es: git push 'enlace' 'rama local':'rama remota'
     ya que origin en realidad es la representación de lo que es el enlace
-    del repositorio
+    del repositorio, por lo qué se podrían enviar los archivos locales a una 
+    rama de otro repositorio al que se tenga acceso. Por ello existe 'origin'
+    como variable de enlace para no romper los repositorios con este comando.
+    y por defecto se envian de la rama actual local a su rama remota. 
 ###     git pull:
+  Este comando ejecuta dos comandos, primeramente git fecth para actualizar la
+  rama que representa a la rama remota en el local, y después se ejecuta dentro
+  de la rama que uno esté situado un git rebase o merge.
+  En caso de haber conflicto al traer los cambios desde el remoto, el comando
+  git pull devolverá una explicación de como configurar el pull, sea en rebase
+  o en merge mediante git config --global pull.rebase true/false, siendo false
+  la condición para merge. Sin embargo, es mejor práctica decidir cual hacer,
+  en lugar de tener una configuración por defecto.
+  Esto se puede ejecutando git pull --rebase/--no-rebase
 ###     git clone:
+  Este comando crea un directorio para el repositorio
+  inicializa en ese directorio como git init el repositorio
+  configura el remoto, con la variable de enlace origin
+  trea los archivos del remoto hacia el local con git pull
+  y sincroniza los log para tener los cambios de los commits.
 ###     git branch:
+  Este comando sirve para para gestionar las ramas locales, es decir
+  puede crear una rama: git branch 'nombre de la rama'
+  eliminar una rama: git branch -d 'nombre de la rama'
+  listar las ramas locales e indicar en cual se situa: git branch 
+  listar todas las ramas incluyendo las relacionadas al remoto: git branch -a
 ###     git merge:
+  Este comando combina los cambios realizados en dos diferentes ramas, en merge
+  los commits de ambas ramas se mantienen y se crea un commit de la unión de 
+  las ramas. A diferencia de git rebase que también combina dos ramas pero
+  reescribe los commits para presentarlos de una forma más lineal.
 ### 3. ¿Qué es Git y cuál es su propósito en el desarrollo de software?
 ### 4. ¿Qué es un conflicto de fusión (merge conflict) en gitignore
 ### y cómo se resuelve?
