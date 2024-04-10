@@ -7,7 +7,7 @@ std::string  Planeta::getNombre() const{
     return nombre;
 };
 
-void Planeta::agregarContinentes(std::string nombreContinente){ 
+void Planeta::agregarTerritorio(std::string nombreContinente){ 
     if(cantidadContinentes < MAX_CONTINENTES){
         continentes[cantidadContinentes++] = nombreContinente;
         }
@@ -22,8 +22,8 @@ void Planeta::mostrarInfo() const{
     << cantidadContinentes << " continentes: ";
     for (int i = 0; i < cantidadContinentes; i++){
     
-        if( i > 0 ) std::cout << ", ";
-    
+        if( i > 0 and i != cantidadContinentes - 1) std::cout << ", ";
+        if(i == cantidadContinentes - 1) std::cout << " y ";
         std::cout << continentes[i];
     }
 
@@ -31,7 +31,7 @@ void Planeta::mostrarInfo() const{
 };
 
 Continente::Continente(Planeta& planeta_, std::string nombre_){
-    planeta_.agregarContinentes(nombre_);
+    planeta_.agregarTerritorio(nombre_);
 };
 
 // Continente crearContinente(Planeta& planeta_, std::string nombre_){

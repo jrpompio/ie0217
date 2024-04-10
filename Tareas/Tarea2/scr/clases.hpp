@@ -26,26 +26,29 @@ class Planeta {
       bool aeropuertoEnEuropa;
       bool aeropuertoEnOceania;
 
+      std::string getNombre() const;
 
     public:
       Planeta(std::string nombre);
-      std::string getNombre() const;
-      void agregarContinentes(std::string nombreContinente);
       void mostrarInfo() const;
+      void agregarTerritorio(std::string nombreContinente);
+
 };
 
-class Continente {
+class Continente /*: public Planeta*/  {
   public:
     Continente(Planeta& planeta_, std::string nombreContinente);
 };
 
-class Pais {
+class Pais : public Continente {
+  public:
+    //Pais(Planeta& planeta_, std::string nombreContinente);
 };
 
-class PaisPrimerMundo {
+class PaisPrimerMundo : public Pais {
 };
 
-class PaisEnDesarrollo {
+class PaisEnDesarrollo : public Pais {
 };
 
 // Funciones
