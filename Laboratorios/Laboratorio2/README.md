@@ -1,7 +1,7 @@
 ### Para copilar:
 
         g++ -o salida.exe main.cpp Empleado.cpp EmpleadoAsalariado.cpp EmpleadoPorHoras.cpp
-
+        
 ### Para ejecutar:
 
     -Para linux
