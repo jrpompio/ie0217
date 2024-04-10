@@ -1,3 +1,9 @@
+se debe estar en el directorio scr
+### Forma de copilar el programa
+        g++ -o salida.exe *.cpp 
+### Corriendo el programa
+        ./salida.exe
+
 ### 1. ¿Qué es la programación orientada a objetos y cuáles son sus principales principios?
     Consiste en programar en mayor nivel, de forma que al representar un objeto
     es más fácil identificar que cualidades de dicho objeto son necesarias atribuir
