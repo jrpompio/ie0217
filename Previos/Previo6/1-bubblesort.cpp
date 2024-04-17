@@ -13,7 +13,7 @@ void bubbleSort(    // Recibe de parametros
       if (array[i] > array [i + 1]){
         int temp = array[i];
         array[i] = array[i + 1];
-        arrra[i + 1] = temp; 
+        array[i + 1] = temp; 
   }
   }
   }
@@ -29,9 +29,9 @@ void printArray(int array[], int size ){
     
 int main() {
 
-  int data[] = {-2, 45, 0, 11, -9};
+  int data[] = {-2, 45, 0, 11, -9, -9999, 9999};
   int size = sizeof(data) / sizeof(data[0]);
-  bubbleSort(data, size)
+  bubbleSort(data, size);
   cout << "Sorted Array in Ascending Order: " <<endl;
   printArray(data, size);
 
