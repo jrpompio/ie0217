@@ -1,11 +1,23 @@
-#include <iostream>
-using namespace std;
+#include "headerlab4.hpp"
 
 
 
-int main() {
+int main()
+{
+    const int SIZE = 10000;
+    int arr[SIZE];
 
-    cout << "Hola mundo!" << endl;
-
+    generateRandomArray(arr, SIZE);
+    measuringSortingTime(bubbleSort, arr, SIZE, "Bubble Sort");
+    
+    generateRandomArray(arr, SIZE);
+    measuringSortingTime(selectionSort, arr, SIZE, "Selection Sort");
+    
+    generateRandomArray(arr, SIZE);
+    measuringSortingTime(insertionSort, arr, SIZE, "Insertion Sort");
+    
+    generateRandomArray(arr, SIZE);
+    measuringQuickSortTime(quickSort, arr, 0, SIZE - 1, "Quick Sort");
 return 0;
 }
+
