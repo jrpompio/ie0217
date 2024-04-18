@@ -1,8 +1,8 @@
 #include "headerlab4.hpp"
 
 #include <iostream>
-#include <cstdlib>
-#include <string>  // Necesaria para generar números aleatorios.
+#include <cstdlib> // Necesaria para generar números aleatorios.
+#include <string>  
 
 #include <ctime>   // Esta libreria sirve para obtener referencia de tiempo.
 #include <chrono>  // Esta libreria sirve para obtener la referencia de tiempo
