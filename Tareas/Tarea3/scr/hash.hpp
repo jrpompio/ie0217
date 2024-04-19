@@ -26,6 +26,12 @@ struct contacto {
                                     para siguiente contacto. */
 };
 
+class Node {
+    public:
+        int value;
+        Node* next;
+};
+
 /************************************************************************//**
  * @brief Clase para crear objeto tipo tabla hash para almacenar estructuras
  * de datos que contengan elementos string, int y la propia estructura.
@@ -34,6 +40,8 @@ struct contacto {
 class HashTable{
   private:
     int maxElements;
+    Node** tablaNodos;
+    contacto** tablaHash;
 
   /**************************************************************//**
    * @brief Encripta numericamente un string.
@@ -51,6 +59,7 @@ class HashTable{
    * @details Convierte el texto recibido en un numero para indexar.
    *****************************************************************/
     HashTable(int maxElements_);
+    ~HashTable();
   
   /**************************************************************//**
    * @brief Agrega elemento a la tabla hash.
