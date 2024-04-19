@@ -8,10 +8,13 @@ HashTable::HashTable(int maxElements_){
     maxElements = maxElements_;
     tablaHash = (contacto**) malloc(sizeof(contacto)*maxElements);
     tablaNodos = (Nodo**) malloc(sizeof(Nodo)*maxElements);
+    tablaIndices = (int*) malloc(sizeof(int) * maxElements);
      }
 
 HashTable::~HashTable(){
       free(tablaHash);
+      free(tablaNodos);
+      free(tablaIndices);
   cout << "\n\nMi nombre es Angron el destructor" << endl;
 }
 
@@ -59,6 +62,7 @@ void HashTable::agregarElemento(const std::string &texto,
   // }
 
   indiceAnterior = indice;
+  tablaIndices[index++] = indice;
 }
 void HashTable::eliminarElemento(const std::string &nombre)
 { 
@@ -73,7 +77,8 @@ void HashTable::eliminarElemento(const std::string &nombre)
 
 void HashTable::mostrarElementos()
 
-{
+{   cout << tablaIndices[index-1] <<endl;
+    cout << indiceAnterior <<endl;
     Nodo* head = tablaNodos[indiceAnterior];
 
     while (head != nullptr)
@@ -84,6 +89,7 @@ void HashTable::mostrarElementos()
     cout << mostrarNombre <<endl;
     head = head->anteriorNodo;
     }
+
     
 
 }

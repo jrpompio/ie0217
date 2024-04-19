@@ -40,7 +40,8 @@ class HashTable{
     int maxElements;
     int indiceAnterior;
     Nodo** tablaNodos;
-    int** tablaIndices;
+    int* tablaIndices;
+    int index = 0;
     contacto** tablaHash;
 
   /**************************************************************//**
