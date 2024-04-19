@@ -10,7 +10,7 @@ HashTable::HashTable(int maxElements_){
 unsigned int HashTable::hashFunction(const std::string &texto)
 {  unsigned int hash = 0;
     for (char j : texto){
-        hash = (hash * 31) + j;
+        hash = ((hash << 5)-hash) + j;
     }
     cout << "\n" << hash <<endl;
     cout << "\n" << hash % maxElements <<endl;
