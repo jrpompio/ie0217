@@ -22,14 +22,12 @@
 struct contacto {
     std::string nombre;         /**< Nombre del contacto. */
     int numero;                 /**< Número del contacto. */
-    contacto* siguiente;        /**< elemento del mismo tipo que la estructura
-                                    para siguiente contacto. */
 };
 
-class Node {
+class Nodo {
     public:
-        int value;
-        Node* next;
+        contacto* actualContacto;
+        Nodo* anteriorNodo;
 };
 
 /************************************************************************//**
@@ -40,7 +38,8 @@ class Node {
 class HashTable{
   private:
     int maxElements;
-    Node** tablaNodos;
+    int indiceAnterior;
+    Nodo** tablaNodos;
     contacto** tablaHash;
 
   /**************************************************************//**

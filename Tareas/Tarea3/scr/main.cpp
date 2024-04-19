@@ -5,8 +5,9 @@ using namespace std;
 
 int main() {
 HashTable contactsApp(1000);    
-contactsApp.agregarElemento("Jurgen", 123);
-contactsApp.agregarElemento("Bunstrangle", 44);
-contactsApp.agregarElemento("Junior", 23132);
+contactsApp.agregarElemento("roinuj", 1234);
+contactsApp.agregarElemento("Bunstrangle", 4444);
+contactsApp.agregarElemento("Junior", 91271231);
+contactsApp.mostrarElementos();
 return 0;
 }
