@@ -7,8 +7,8 @@ HashTable::HashTable(int maxElements_){
     maxElements = maxElements_;
     contacto* tablaHash[maxElements] = {nullptr};}
 
-int HashTable::hashFunction(const std::string &texto)
-{   int hash = 0;
+unsigned int HashTable::hashFunction(const std::string &texto)
+{  unsigned int hash = 0;
     for (char j : texto){
         hash = (hash * 31) + j;
     }

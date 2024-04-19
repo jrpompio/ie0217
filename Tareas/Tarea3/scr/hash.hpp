@@ -41,7 +41,7 @@ class HashTable{
    * @details Convierte el texto recibido en un numero para indexar.
    * @return devuelve el número para indexar un elemento
    *****************************************************************/
-    int hashFunction(const std::string &texto);
+    unsigned int hashFunction(const std::string &texto);
 
   public:
 
