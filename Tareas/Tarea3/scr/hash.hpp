@@ -33,16 +33,7 @@ struct contacto {
 
 class HashTable{
   private:
-    int maxElements; 
-    contacto* tablaHash[maxElements] = {nullptr};
-     /**< Arreglo que representa la tabla hash de contactos. */
-
-  /**************************************************************//**
-   * @brief Constructor de la claseHashTable
-   * @param maxElements se ingresa la cantidad de elementos a guardar.
-   * @details Convierte el texto recibido en un numero para indexar.
-   *****************************************************************/
-    HashTable(int maxElements_);
+    int maxElements;
 
   /**************************************************************//**
    * @brief Encripta numericamente un string.
@@ -53,6 +44,14 @@ class HashTable{
     int hashFunction(const std::string &texto);
 
   public:
+
+    /**************************************************************//**
+   * @brief Constructor de la claseHashTable
+   * @param maxElements se ingresa la cantidad de elementos a guardar.
+   * @details Convierte el texto recibido en un numero para indexar.
+   *****************************************************************/
+    HashTable(int maxElements_);
+  
   /**************************************************************//**
    * @brief Agrega elemento a la tabla hash.
    * @param texto El texto tipo string de la estructura a agregar.
