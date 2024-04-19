@@ -32,3 +32,8 @@
 *.app
 *.swp
 sandbox/prueba.cpp
+
+
+# Relacionado a doxygen
+*Doxyfile
+Doxygen
