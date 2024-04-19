@@ -26,7 +26,7 @@ struct contacto {
 
 class Nodo {
     public:
-        contacto* actualContacto;
+        contacto actualContacto;
         Nodo* anteriorNodo;
 };
 
@@ -40,6 +40,7 @@ class HashTable{
     int maxElements;
     int indiceAnterior;
     Nodo** tablaNodos;
+    int** tablaIndices;
     contacto** tablaHash;
 
   /**************************************************************//**

@@ -27,13 +27,21 @@ unsigned int HashTable::hashFunction(const std::string &texto)
 
 void HashTable::agregarElemento(const std::string &texto,
   const int &numero){
-  contacto* nuevoContacto = (contacto*)malloc(sizeof(contacto));
-  Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+  // Apartado de memoria dinamica para contacto 
+  contacto *nuevoContacto = (contacto*)malloc(sizeof(contacto));
+  // Apartado de memoria dinamica para nodo
+  Nodo *nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+  
+  // Declaración de contacto para "copia cloud" hacia el nodo
+  contacto nodoContacto;
+  nodoContacto.nombre = texto;
+  nodoContacto.numero = numero;
 
   nuevoContacto->nombre = texto;
   nuevoContacto->numero = numero;
   
-  nuevoNodo->actualContacto = nuevoContacto;
+  nuevoNodo->actualContacto = nodoContacto;
+
   if (indiceAnterior == 0){
   nuevoNodo->anteriorNodo = nullptr;} 
   else {
@@ -53,7 +61,14 @@ void HashTable::agregarElemento(const std::string &texto,
   indiceAnterior = indice;
 }
 void HashTable::eliminarElemento(const std::string &nombre)
-{
+{ 
+  contacto* tempContacto;
+  unsigned int indice = hashFunction(nombre);
+  tempContacto = tablaHash[indice];
+  if (tempContacto->nombre == nombre){
+    cout << "\n-----iguales" <<endl;
+    free(tempContacto);
+  }
 }
 
 void HashTable::mostrarElementos()
@@ -65,10 +80,8 @@ void HashTable::mostrarElementos()
     {
     cout << endl <<endl;
     
-    auto mostrarNombre = head->actualContacto->nombre;
-    auto mostrarNumero = head->actualContacto->numero;
+    auto mostrarNombre = head->actualContacto.nombre;
     cout << mostrarNombre <<endl;
-    cout << mostrarNumero <<endl;
     head = head->anteriorNodo;
     }
     
