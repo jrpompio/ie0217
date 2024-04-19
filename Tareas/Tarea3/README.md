@@ -3,9 +3,12 @@
 
 ### 1. ¿Qué es un algoritmo y cuáles son sus caracterı́sticas principales?
     Un algoritmo es un conjunto de instrucciones paso a paso que describe cómo realizar una tarea específica. Sus características principales incluyen claridad, precisión, finitud, efectividad y generalidad.
-    
+
 ### 2. Explica la diferencia entre un algoritmo eficiente y uno ineficiente.
+    Un algoritmo eficiente es aquel que utiliza recursos como tiempo y memoria de manera óptima para resolver un problema en un tiempo razonable, incluso para entradas grandes. 
+    Uno ineficiente es lo contrario.
 ### 3. ¿Qué es una estructura de datos y por qué son importantes?
+    Las estructuras de datos son formas de organizar datos para un uso eficiente en computadoras. Son importantes porque afectan directamente el rendimiento de los programas.
 ### 4. Describe las diferencias entre una estructura de datos estática y una dinámica.
 ### 5. ¿Qué es la memoria dinámica y cómo se gestiona en lenguajes de programación como
 ### C++, explique las operaciones que se pueden realizar?
