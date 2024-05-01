@@ -1,9 +1,10 @@
-all: vimrun
+ # Regla por default, se deja por que es buena práctica siempre
+# establecerla, aun que solo exista una regla
 
-vimrun:
+all: TargetRun
+
+TargetRun: 
 		g++ -o salida.exe $(TARGET)
 		clear
-		# Corriendo el código
-		./salida.exe
-		# Borrando el ejecutable
-		rm salida.exe
+		./salida.exe   # Corriendo el codigo
+		rm salida.exe  # Borrando el ejecutable
