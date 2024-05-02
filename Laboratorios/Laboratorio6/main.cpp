@@ -38,7 +38,7 @@ int main(){
 try {
 
   // Creando vector que contiene elementos int 
-  std::vector<int> intData = {1, 2, 3, 4, 5};
+  std::vector<int> intData = {1, 2, 3, 4, 5, 6};
 
   /* Usando template de la clase para enviar contenedor de elementos tipo int
    */ 
@@ -63,7 +63,7 @@ try {
 
 } catch (const std::invalid_argument& e) {
   std::cerr << "Excepcion encontrada: " << e.what() << std::endl;
-  
+
 }
 
 return 0;   
