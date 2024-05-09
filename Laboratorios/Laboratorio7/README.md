@@ -6,8 +6,9 @@
 ##### Para ejecutar
         ./bin/textprocessor -f data/input.txt -o data/output.txt -search "palabra_a_buscar" -replace "palabra_a_reemplazar"
 
-##### El Makefile contiene la instrucción rm
-##### Si se desea ejecutar en windows cambiar rm por del
+### Observaciones
+        - El Makefile contiene la instrucción rm
+        - Si se desea ejecutar en windows cambiar rm por del
 ##### Se deben crear los directorios "data" y "bin" en caso de no existir
 ##### Data contiene input.txt y output.txt
 ##### input.txt 
