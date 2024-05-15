@@ -12,8 +12,14 @@
         sudo ldconfig
 ### Para copilar se deberá hacer de la siguiente manera
         g++ archivos_de_entrada.cpp -o salida.exe `wx-config --cppflags --libs`
+
 #### Notese que wx-config --cppflags --libs se encuentra entre ` tilde inversa 
+
 #### La instalación quedará en el directorio /usr/local/lib/wx
+#### Se deben agregar estas direcciones al intellisense
+                "/usr/local/include/wx-3.2",
+                "/usr/local/lib/wx/include/gtk3-unicode-3.2"
+                
 #### Documentación encontrada en
         https://wiki.wxwidgets.org/Compiling_and_getting_started
 
