@@ -14,6 +14,8 @@
         g++ archivos_de_entrada.cpp -o salida.exe `wx-config --cppflags --libs`
 #### Notese que wx-config --cppflags --libs se encuentra entre ` tilde inversa 
 #### La instalación quedará en el directorio /usr/local/lib/wx
+#### Documentación encontrada en
+        https://wiki.wxwidgets.org/Compiling_and_getting_started
 
 
 ## A continuación el README de parte de wxWidgets Team
