@@ -10,6 +10,9 @@
         make install
 ### uso ld para configurar flags
         sudo ldconfig
+### Para copilar se deberá hacer de la siguiente manera
+        g++ archivos_de_entrada.cpp -o salida.exe `wx-config --cppflags --libs`
+#### Notese que wx-config --cppflags --libs se encuentra entre ` tilde inversa 
 #### La instalación quedará en el directorio /usr/local/lib/wx
 
 
