@@ -41,8 +41,7 @@ Group 7
         ORDER BY patient_count DESC
       	
     
-#### 3. Show the total amount of male patients and the total amount of female patients in the patients table. 
-        Display the two results in the same row. ---> Daniel
+#### 3. Show the total amount of male patients and the total amount of female patients in the patients table. Display the two results in the same row. ---> Daniel
         SELECT SUM(gender = 'M') AS male_total, SUM(gender = 'F') AS female_total -- Suma la cantidad de pacientes por género y se le pone su propio título
         FROM patients
         
@@ -178,16 +177,18 @@ Group 7
 
 ### HARD:
   
-#### 1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, 
-    	and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late.
-      Order by employee last_name, then by first_name, and then descending by number of orders. ---> Daniel
+#### 1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late. Order by employee last_name, then by first_name, and then descending by number of orders. ---> Daniel
     
 #### 2. Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places -----> Caleb
+
+        -- Encontrar las ordenes por año y la cantidad de descuentos en ese año
+        Select YEAR(orderTime.order_date) AS 'order_year' , 
+        ROUND(SUM(prod.unit_price * orden.quantity * orden.discount),2) AS 'discount_amount'
+        -- Unir las columnas en una tabla nueva desplegando los años y los montos
+        FROM orders orderTime 
+        JOIN order_details orden ON orderTime.order_id = orden.order_id
+        JOIN products prod ON orden.product_id = prod.product_id
+        -- Agrupar y mostrar de manera descendentemente
+        GROUP BY YEAR(orderTime.order_date)
+        ORDER BY order_year desc;
 		   
-
-
-
-
-
-
------------------------------------------------------------------------------------
