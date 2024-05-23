@@ -1,16 +1,16 @@
 Group 7
 
-HOSPITAL:
------------------------------------------------------------------------------------
-	EASY:
+### HOSPITAL:
+
+#### EASY:
   
-		1. Show all columns for patients who have one of the following patient_ids: 1,45,534,879,1000 ---> Daniel
+##### 1. Show all columns for patients who have one of the following patient_ids: 1,45,534,879,1000 ---> Daniel
     
-      SELECT * FROM patients -- Agarra toda la información de la tabla patients
-      WHERE patient_id IN (1, 45, 534, 879, 1000);  -- Busca todas las columnas de los pacientes que tienen alguno de esos números como patient_id
+        SELECT * FROM patients -- Agarra toda la información de la tabla patients
+        WHERE patient_id IN (1, 45, 534, 879, 1000);  -- Busca todas las columnas de los pacientes que tienen alguno de esos números como patient_id
 
 
-    2. Show the total number of admissions. ---> junior
+##### 2. Show the total number of admissions. ---> junior
     
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 SELECT COUNT(*) 				-- Contando todas las filas
