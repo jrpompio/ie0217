@@ -177,7 +177,20 @@
 ### HARD:
   
 #### 1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late. Order by employee last_name, then by first_name, and then descending by number of orders. ---> Daniel
-    
+
+        SELECT employees.first_name, employees.last_name, COUNT(order_id) AS num_orders, --Selecciona nombre y apellido y la cantidad de órdenes hechas por persona
+        (
+          CASE
+            WHEN shipped_date <= required_date THEN 'On Time'
+            ELSE 'Late'
+          END
+        ) AS Shipped --Se crea un condicional donde si el shipped_date es menor o igual a required_date entonces está a tiempo, caso contrario está tarde
+        FROM orders
+        JOIN employees --Une las tablas 'orders' y 'employees'
+        ON employees.employee_id = orders.employee_id --Dado que los employee_id de esas tablas coincide, se usa para relacionar cada employee con su order
+        GROUP BY first_name, last_name, Shipped --Se agrupa por nombre, apellido y Shipped 
+        ORDER BY last_name, first_name, num_orders DESC --Se ordena por apellido, luego nombre, luego decendiente por número de órdenes
+
 #### 2. Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places -----> Caleb
 
         -- Encontrar las ordenes por año y la cantidad de descuentos en ese año
