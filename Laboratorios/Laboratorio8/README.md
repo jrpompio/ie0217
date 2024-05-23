@@ -120,82 +120,69 @@ Group 7
 
 
 ## NORTHWIND:
-### EASY:
-  
+### EASY:  
 #### 1. Show the category_name and description from the categories table sorted by category_name. -------> Caleb
-    	 -- Seleccionar nombre y descripción de la tabla categoría
-       SELECT category_name, descriptions FROM categories
-       -- Ordenar por el nombre de categoría
-       ORDER BY category_name
+        -- Seleccionar nombre y descripción de la tabla categoría
+        SELECT category_name, descriptions FROM categories
+        -- Ordenar por el nombre de categoría
+        ORDER BY category_name
     
     
-    2. Show all the even numbered Order_id from the orders table ---> Chris
+#### 2. Show all the even numbered Order_id from the orders table ---> Chris
     
-    	--seleccionamos la columna de order_id de la tabla de orders
-    	SELECT order_id
-			FROM orders
-			WHERE order_id % 2 = 0;
+        --seleccionamos la columna de order_id de la tabla de orders
+        SELECT order_id
+        	FROM orders
+        	WHERE order_id % 2 = 0;
     
     
-    3. Show the first_name, last_name. hire_date of the most recently hired employee. ---> Junior 
+#### 3. Show the first_name, last_name. hire_date of the most recently hired employee. ---> Junior 
     
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        select 
+            first_name,		-- Selecionando columna first_name
+            last_name,		-- Selecionando columna last_name
+        max(hire_date)		-- Importando la fila que contenga el mayor hire_date
+        	as hire_date	-- Mostrando resultado con la etiqueta hire_date
+        from employees		-- desde la tabla employees
 
-select 
-    first_name,		-- Selecionando columna first_name
-    last_name,		-- Selecionando columna last_name
-max(hire_date)		-- Importando la fila que contenga el mayor hire_date
-	as hire_date	-- Mostrando resultado con la etiqueta hire_date
-from employees		-- desde la tabla employees
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------
-	MEDIUM:
+###	MEDIUM:
   	
-    1. Show the ProductName, CompanyName, CategoryName from the products, suppliers, and categories table. ---> Daniel
+#### 1. Show the ProductName, CompanyName, CategoryName from the products, suppliers, and categories table. ---> Daniel
     
-      SELECT products.product_name, suppliers.company_name, categories.category_name -- Selecciona el nombre del producto, compañía y categoría
-      FROM products
-      JOIN suppliers
-      ON products.supplier_id = suppliers.supplier_id --Se realiza una unión entre 
-      JOIN categories 
-      On products.category_id = categories.category_id;
-    
-    2. Show the category_name and the average product unit price for each category rounded to 2 decimal places. -----> Caleb
-    	 	-- Seleccionar el nombre de categoría y extraer el precio promedio por unidad de la tabla categories y de la tabla products respectivamente
+        SELECT products.product_name, suppliers.company_name, categories.category_name -- Selecciona el nombre del producto, compañía y categoría
+        FROM products
+        JOIN suppliers
+        ON products.supplier_id = suppliers.supplier_id --Se realiza una unión entre 
+        JOIN categories 
+        On products.category_id = categories.category_id;
+#### 2. Show the category_name and the average product unit price for each category rounded to 2 decimal places. -----> Caleb
+        -- Seleccionar el nombre de categoría y extraer el precio promedio por unidad de la tabla categories y de la tabla products respectivamente
         SELECT cat.category_name, ROUND(AVG(prices.unit_price, 2)) AS avg_unit_price FROM products prices
-      	-- Unir ambas columnas para observar los datos
+        -- Unir ambas columnas para observar los datos
         JOIN categories cat ON cat.category_id = prices.Category_id
         -- Ordenarlos por el nombre de categoría 
         GROUP BY cat.category_name
     	
     	
     
-    3. Show the city, company_name, contact_name from the customers and suppliers table merged together. --> Chris
-			 Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
-       
-       --seleecionamos de la tabla de clientes ciudad,company_name , segun de donde se tomo el dato se hara una columna de customer o suppliers
-       -- por eso el customers AS relationship
-       -- y unimos con union ara que no se repitan en ambos lados 
-       
-       select City, company_name, contact_name, 'customers' as relationship 
-			 from customers
-				union
-				select city, company_name, contact_name, 'suppliers'
-				from suppliers
-       
------------------------------------------------------------------------------------
+#### 3. Show the city, company_name, contact_name from the customers and suppliers table merged together. --> Chris
+        Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
+        --seleecionamos de la tabla de clientes ciudad,company_name , segun de donde se tomo el dato se hara una columna de customer o suppliers
+        -- por eso el customers AS relationship
+        -- y unimos con union ara que no se repitan en ambos lados 
+        select City, company_name, contact_name, 'customers' as relationship 
+        from customers
+        union
+        select city, company_name, contact_name, 'suppliers'
+        from suppliers
 
------------------------------------------------------------------------------------
-	HARD:
+### HARD:
   
-  	1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, 
+#### 1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, 
     	and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late.
       Order by employee last_name, then by first_name, and then descending by number of orders. ---> Daniel
     
-    2. Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places -----> Caleb
+#### 2. Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places -----> Caleb
 		   
 
 
