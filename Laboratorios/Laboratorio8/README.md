@@ -1,43 +1,35 @@
 Group 7
 
-### HOSPITAL:
+## HOSPITAL:
 
-#### EASY:
+### EASY:
   
-##### 1. Show all columns for patients who have one of the following patient_ids: 1,45,534,879,1000 ---> Daniel
-    
+#### 1. Show all columns for patients who have one of the following patient_ids: 1,45,534,879,1000 ---> Daniel
+
         SELECT * FROM patients -- Agarra toda la información de la tabla patients
         WHERE patient_id IN (1, 45, 534, 879, 1000);  -- Busca todas las columnas de los pacientes que tienen alguno de esos números como patient_id
 
 
-##### 2. Show the total number of admissions. ---> junior
+#### 2. Show the total number of admissions. ---> junior
     
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-SELECT COUNT(*) 				-- Contando todas las filas
-AS total_admissions				-- Mostrando resultado con etiqueta total_admissions
-FROM admissions;  				-- Selecionando tabla
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        SELECT COUNT(*) 				-- Contando todas las filas
+        AS total_admissions				-- Mostrando resultado con etiqueta total_admissions
+        FROM admissions;  				-- Selecionando tabla
 
-
------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------
-	MEDIUM:
+### MEDIUM:
     
-		1. Show first name, last name and role of every person that is either patient or doctor. ---> Chris
-			 The roles are either "Patient" or "Doctor" 
-       
-       --Seleccionamos nombre y apellido , se agrega paciente como role porque no existe
-			 -- se utiliza la union para unir 2 tablas verdad y se seleccionan de la otra tabla lo mismo nombre y apellido
-			
-      Select first_name,last_name, 'Patient' as role from patients
-			union ALL 
-			select first_name,last_name, 'Doctor' From doctors;
+#### 1. Show first name, last name and role of every person that is either patient or doctor. ---> Chris
+        The roles are either "Patient" or "Doctor" 
+        --Seleccionamos nombre y apellido , se agrega paciente como role porque no existe
+        -- se utiliza la union para unir 2 tablas verdad y se seleccionan de la otra tabla lo mismo nombre y apellido			
+        Select first_name,last_name, 'Patient' as role from patients
+        union ALL 
+        select first_name,last_name, 'Doctor' From doctors;
        
        
        
-    2. Display the total amount of patients for each province. Order by descending. -----> Caleb
-    		--Seleccionar columna province name
+#### 2. Display the total amount of patients for each province. Order by descending. -----> Caleb
+        --Seleccionar columna province name
         SELECT  province_name,
         -- Contar el numero de pacientes en la columna 
         COUNT(*) AS num_patients FROM patients patient
@@ -49,108 +41,88 @@ FROM admissions;  				-- Selecionando tabla
         ORDER BY patient_count DESC
       	
     
-    3. Show the total amount of male patients and the total amount of female patients in the patients table. 
-    	 Display the two results in the same row. ---> Daniel
-       
-       	SELECT SUM(gender = 'M') AS male_total, SUM(gender = 'F') AS female_total -- Suma la cantidad de pacientes por género y se le pone su propio título
+#### 3. Show the total amount of male patients and the total amount of female patients in the patients table. 
+        Display the two results in the same row. ---> Daniel
+        SELECT SUM(gender = 'M') AS male_total, SUM(gender = 'F') AS female_total -- Suma la cantidad de pacientes por género y se le pone su propio título
         FROM patients
         
-    4. Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long. ----> Junior
-    
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-SELECT
-  patient_id,						-- Selecionando columna patient_id
-  first_name						-- también columna first_name
-FROM patients						-- Selecionando tabla pacientes
+#### 4. Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long. ----> Junior
 
-/* 	cuyos nombres empiezan y terminan en 's'
-	esto se logra usando LIKE y pasandole como parametro
-    
-    's____%s'
-	se nota que empieza con s
-	le siguien 4 caracteres '_'
-	le sigue un % que significa que obtenga todo caracter
-    y finaliza con s
-	
-	Las dos 's' y los 4 '_' dan 6 carácteres, siendo este el minimo
-*/
-
-WHERE first_name LIKE 's____%s';
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        SELECT
+          patient_id,						-- Selecionando columna patient_id
+          first_name						-- también columna first_name
+        FROM patients						-- Selecionando tabla pacientes
+        /* 	cuyos nombres empiezan y terminan en 's'
+        	esto se logra usando LIKE y pasandole como parametro
+            's____%s'
+        	se nota que empieza con s
+        	le siguien 4 caracteres '_'
+        	le sigue un % que significa que obtenga todo caracter
+            y finaliza con s
+        	Las dos 's' y los 4 '_' dan 6 carácteres, siendo este el minimo
+        */
+        WHERE first_name LIKE 's____%s';
 
 
------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------    
-	HARD: 
+###	HARD: 
   
-		1. Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name ----> Junior 
+#### 1. Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name ----> Junior 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-select province_name		-- Seleccionando fila
-from province_names 		-- selencionando tabla
-where province_id IN 		-- Sustrayendo Datos usando ID como parametro
+        select province_name		-- Seleccionando fila
+        from province_names 		-- selencionando tabla
+        where province_id IN 		-- Sustrayendo Datos usando ID como parametro
 
-/* 	Acá los datos son sustraidos usando el foreing key que va desde
-	la tabla patiens hasta la tabla province_names
-    que es province_id, estos se agrupan mediante este y despué
-    se cuentan los pacientes que tienen el genero 'M'
+        /* 	Acá los datos son sustraidos usando el foreing key que va desde
+        	la tabla patiens hasta la tabla province_names
+            que es province_id, estos se agrupan mediante este y despué
+            se cuentan los pacientes que tienen el genero 'M'
 
-	Se sustraeran de una sub tabla
-*/
+        	Se sustraeran de una sub tabla
+        */
 
-(
-  select province_id		-- Selencionando fila
-  from patients				-- selecionando tabla
-  group by province_id			-- Agrupando por province_id
-  having sum(gender = 'M')	-- Se tiene que se escogen los cuales la suma
-  > Sum(gender = 'F')			-- de los pacientes genero M sea mayor
-  								-- que la de los pacientes genero F
-)
+        (
+          select province_id		-- Selencionando fila
+          from patients				-- selecionando tabla
+          group by province_id			-- Agrupando por province_id
+          having sum(gender = 'M')	-- Se tiene que se escogen los cuales la suma
+          > Sum(gender = 'F')			-- de los pacientes genero M sea mayor
+          								-- que la de los pacientes genero F
+        )
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     
     
     
-    2. We are looking for a specific patient. Pull all columns for the patient who matches the following criteria: ---> Chris
-			- First_name contains an 'r' after the first two letters.
-			- Identifies their gender as 'F'
-			- Born in February, May, or December
-			- Their weight would be between 60kg and 80kg
-			- Their patient_id is an odd number
-			- They are from the city 'Kingston'
-      
-      
-			--seleccionamos toda la tabla porque buscamos un paciente en especifico
-			-- simplemente empezamos a buscar con where los valores que nos piden
-			-- para regex usamos LIKE
-			--y asi sucesivamente
-		SELECT *
-		FROM patients
-		WHERE
-  		first_name LIKE '__r%'
-  		AND patient_id % 2 = 1
-  		AND city = 'Kingston'
-  		AND gender = 'F'
-  		AND weight BETWEEN 60 AND 80
-  		AND MONTH(birth_date) IN (2, 5, 12)
-  		AND patient_id % 2 = 1;
+#### 2. We are looking for a specific patient. Pull all columns for the patient who matches the following criteria: ---> Chris
+
+	        - First_name contains an 'r' after the first two letters.
+	        - Identifies their gender as 'F'
+	        - Born in February, May, or December
+	        - Their weight would be between 60kg and 80kg
+	        - Their patient_id is an odd number
+	        - They are from the city 'Kingston'
+
+
+	        --seleccionamos toda la tabla porque buscamos un paciente en especifico
+	        -- simplemente empezamos a buscar con where los valores que nos piden
+	        -- para regex usamos LIKE
+	        --y asi sucesivamente
+            SELECT *
+            FROM patients
+            WHERE
+            first_name LIKE '__r%'
+            AND patient_id % 2 = 1
+            AND city = 'Kingston'
+            AND gender = 'F'
+            AND weight BETWEEN 60 AND 80
+            AND MONTH(birth_date) IN (2, 5, 12)
+            AND patient_id % 2 = 1;
   
-      
-      
-      
-    
------------------------------------------------------------------------------------
 
-***********************************************************************************
 
------------------------------------------------------------------------------------
-
-NORTHWIND:
------------------------------------------------------------------------------------
-	EASY:
+## NORTHWIND:
+### EASY:
   
-  	1. Show the category_name and description from the categories table sorted by category_name. -------> Caleb
+#### 1. Show the category_name and description from the categories table sorted by category_name. -------> Caleb
     	 -- Seleccionar nombre y descripción de la tabla categoría
        SELECT category_name, descriptions FROM categories
        -- Ordenar por el nombre de categoría
