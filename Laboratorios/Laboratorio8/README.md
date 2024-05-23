@@ -1,4 +1,4 @@
-Group 7
+# Group 7
 
 ## HOSPITAL:
 
@@ -19,7 +19,7 @@ Group 7
 ### MEDIUM:
     
 #### 1. Show first name, last name and role of every person that is either patient or doctor. ---> Chris
-        The roles are either "Patient" or "Doctor" 
+#### The roles are either "Patient" or "Doctor" 
         --Seleccionamos nombre y apellido , se agrega paciente como role porque no existe
         -- se utiliza la union para unir 2 tablas verdad y se seleccionan de la otra tabla lo mismo nombre y apellido			
         Select first_name,last_name, 'Patient' as role from patients
@@ -92,13 +92,12 @@ Group 7
     
     
 #### 2. We are looking for a specific patient. Pull all columns for the patient who matches the following criteria: ---> Chris
-
-	        - First_name contains an 'r' after the first two letters.
-	        - Identifies their gender as 'F'
-	        - Born in February, May, or December
-	        - Their weight would be between 60kg and 80kg
-	        - Their patient_id is an odd number
-	        - They are from the city 'Kingston'
+#### - First_name contains an 'r' after the first two letters.
+#### - Identifies their gender as 'F'
+#### - Born in February, May, or December
+#### - Their weight would be between 60kg and 80kg
+#### - Their patient_id is an odd number
+#### - They are from the city 'Kingston'
 
 
 	        --seleccionamos toda la tabla porque buscamos un paciente en especifico
